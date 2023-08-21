@@ -44,9 +44,15 @@ Follow these instructions to set up and run the CryptoDash project on your local
 
 2. Access the CryptoDash dashboard in your web browser at `http://localhost:8501`.
 
-## Screenshots
+## Demo
 
-Include some screenshots of the CryptoDash dashboard here to give users a visual preview.
+Check out the CryptoDash dashboard in action:
+
+- [Watch the Demo Video](https://github.com/vikasharma005/CryptoDash/raw/main/demo.webm)
+- Screenshots:
+  ![Screenshot 1](https://github.com/vikasharma005/CryptoDash/raw/main/visualization%20(1).png)
+  ![Screenshot 2](https://github.com/vikasharma005/CryptoDash/raw/main/visualization%20(2).png)
+
 
 ## Author
 
