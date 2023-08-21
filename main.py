@@ -20,6 +20,10 @@ Ethereum = 'ETH-USD'
 Ripple = 'XRP-USD'
 BitcoinCash = "BCH-USD"
 
+# User input for date range
+start_date = st.date_input("Select a start date")
+end_date = st.date_input("Select an end date")
+
 # Access data from Yahoo Finance
 BTC_Data = yf.Ticker(Bitcoin)
 ETH_Data = yf.Ticker(Ethereum)
@@ -61,3 +65,4 @@ for crypto_name, crypto_image, crypto_df, crypto_hist in cryptos:
     st.table(crypto_df)
     st.write("Price Chart:")
     st.bar_chart(crypto_hist.Close)
+
