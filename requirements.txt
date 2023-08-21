@@ -3,4 +3,4 @@ yfinance==0.1.63
 Pillow==8.2.0
 protobuf==3.20.1
 altair==4.1.0
-mplfinance
+mplfinance=0.12.7
