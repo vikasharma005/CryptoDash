@@ -11,8 +11,8 @@ from urllib.request import urlopen
 
 # Titles and subtitles
 st.title("Cryptocurrency Daily Prices | ₿")
-st.header("Main Dashboard")
-st.subheader("You can add more crypto in code </>")
+#st.header("Main Dashboard")
+#st.subheader("You can add more crypto in code </>")
 
 # Defining ticker variables
 Bitcoin = 'BTC-USD'
@@ -63,6 +63,7 @@ for crypto_name, crypto_image, crypto_df, crypto_hist in cryptos:
     st.table(crypto_hist)
     st.write("Data on Selected Date Range:")
     st.table(crypto_df)
-    st.write("Price Chart:")
-    st.bar_chart(crypto_hist.Close)
-
+    st.write("Price Line Chart:")
+    st.line_chart(crypto_hist.Close)
+    st.write("Candlestick Chart:")
+    st.plotly_chart(crypto_hist[["Open", "High", "Low", "Close"]])
