@@ -21,8 +21,8 @@ Ripple = 'XRP-USD'
 BitcoinCash = "BCH-USD"
 
 # User input for date range
-start_date = st.date_input("Select a start date", value=(2021, 11, 19))
-end_date = st.date_input("Select an end date", value=(2021, 11, 19))
+start_date = st.date_input("Select a start date")
+end_date = st.date_input("Select an end date")
 
 # Access data from Yahoo Finance
 BTC_Data = yf.Ticker(Bitcoin)
