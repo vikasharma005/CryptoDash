@@ -14,7 +14,7 @@ Follow these instructions to set up and run the CryptoDash project on your local
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.10
 - [Streamlit](https://streamlit.io/)
 - [yfinance](https://github.com/ranaroussi/yfinance)
 - [Pillow](https://python-pillow.org/)
@@ -39,10 +39,8 @@ Follow these instructions to set up and run the CryptoDash project on your local
 1. Run the Streamlit app:
 
    ```bash
-   streamlit run crypto_dash_app.py
+   streamlit run main.py
    ```
-
-   Replace `crypto_dash_app.py` with the name of your Python script containing the provided code.
 
 2. Access the CryptoDash dashboard in your web browser at `http://localhost:8501`.
 
@@ -67,11 +65,8 @@ Include some screenshots of the CryptoDash dashboard here to give users a visual
 
 You can find more about me and my projects on my [GitHub profile](https://github.com/vikasharma005).
 
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-
