@@ -48,10 +48,10 @@ Follow these instructions to set up and run the CryptoDash project on your local
 
 Check out the CryptoDash dashboard in action:
 
-- [Watch the Demo Video](https://github.com/vikasharma005/CryptoDash/raw/main/demo.webm)
+- [Watch the Demo Video](https://github.com/vikasharma005/CryptoDash/raw/main/demo.mp4)
 - Screenshots:
   ![Screenshot 1](https://github.com/vikasharma005/CryptoDash/raw/main/visualization%20(1).png)
-  ![Screenshot 2](https://github.com/vikasharma005/CryptoDash/raw/main/visualization%20(2).png)
+  ![Screenshot 2](https://github.com/vikasharma005/CryptoDash/raw/main/visualization.png)
 
 
 ## Author
