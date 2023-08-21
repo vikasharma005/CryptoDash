@@ -8,6 +8,7 @@ import yfinance as yf
 import streamlit as st
 from PIL import Image
 from urllib.request import urlopen
+import mplfinance as mpf
 
 # Titles and subtitles
 st.title("Cryptocurrency Daily Prices | ₿")
@@ -65,5 +66,9 @@ for crypto_name, crypto_image, crypto_df, crypto_hist in cryptos:
     st.table(crypto_df)
     st.write("Price Line Chart:")
     st.line_chart(crypto_hist.Close)
+
+    # Candlestick Chart
     st.write("Candlestick Chart:")
-    st.plotly_chart(crypto_hist[["Open", "High", "Low", "Close"]])
+    fig, ax = mpf.plot(crypto_hist, type='candle', style='yahoo', title=f"{crypto_name} Candlestick Chart",
+                        ylabel='Price', volume=True, returnfig=True)
+    st.pyplot(fig)
