@@ -11,18 +11,14 @@ from urllib.request import urlopen
 
 # Titles and subtitles
 st.title("Cryptocurrency Daily Prices | ₿")
-#st.header("Main Dashboard")
-#st.subheader("You can add more crypto in code </>")
+st.header("Main Dashboard")
+st.subheader("You can add more crypto in code </>")
 
 # Defining ticker variables
 Bitcoin = 'BTC-USD'
 Ethereum = 'ETH-USD'
 Ripple = 'XRP-USD'
 BitcoinCash = "BCH-USD"
-
-# User input for date range
-start_date = st.date_input("Select a start date")
-end_date = st.date_input("Select an end date")
 
 # Access data from Yahoo Finance
 BTC_Data = yf.Ticker(Bitcoin)
@@ -41,6 +37,12 @@ BTC = yf.download(Bitcoin, start=start_date, end=end_date)
 ETH = yf.download(Ethereum, start=start_date, end=end_date)
 XRP = yf.download(Ripple, start=start_date, end=end_date)
 BCH = yf.download(BitcoinCash, start=start_date, end=end_date)
+
+# Define cryptocurrency icons
+imageBTC = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/1.png'))
+imageETH = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'))
+imageXRP = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/52.png'))
+imageBCH = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png'))
 
 # Display data for each cryptocurrency
 cryptos = [
