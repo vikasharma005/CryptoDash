@@ -1,7 +1,7 @@
 """
 Cryptocurency Daily Prices 
 Dashboard using streamlit and Yahoo Finance libraries
-@Bek Brace 
+@vikasharma005
 Almost the same thing we did with stock prices in previous tutorial
 """
 
