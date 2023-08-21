@@ -48,7 +48,7 @@ Follow these instructions to set up and run the CryptoDash project on your local
 
 Check out the CryptoDash dashboard in action by clicking on the video link below:
 
-[![Click to Watch Demo Video](https://example.com/video_thumbnail.png)](https://player.vimeo.com/video/856483104?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
+![Click to Watch Demo Video](https://github.com/vikasharma005/CryptoDash/blob/e89e3d8a464e61a52a8f76b5b2e580b3a35ed075/demo.gif)
 
 
 ## Author
