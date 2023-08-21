@@ -4,65 +4,78 @@ Dashboard using streamlit and Yahoo Finance libraries
 @vikasharma005
 Almost the same thing we did with stock prices in previous tutorial
 """
+import yfinance as yf
+import streamlit as st
+from PIL import Image
+from urllib.request import urlopen
 
-import yfinance as yf  # Yahoo finance to get stock data
-import streamlit as st  # Streamlit to create the webapp
-from PIL import Image  # Import Pillow to add icons - Python Image Library
-from urllib.request import urlopen  # To add URLS
+# Titles and subtitles
+st.title("Cryptocurrency Daily Prices | ₿")
+st.header("Main Dashboard")
+st.subheader("you can add more crypto in code </>")
 
 
-# Define bitcoin and ethereum and other cryptocurrency abbreviation used by Yahoo Finance.
+# Defining ticker variables
 Bitcoin = 'BTC-USD'
 Ethereum = 'ETH-USD'
 Ripple = 'XRP-USD'
-Bitcoin_Cash = 'BCH-USD'
+BitcoinCash = "BCH-USD"
 
-
-# Lets access the Data from Yahoo Finance using .ticker method
+# Access data from Yahoo Finance
 BTC_Data = yf.Ticker(Bitcoin)
 ETH_Data = yf.Ticker(Ethereum)
 XRP_Data = yf.Ticker(Ripple)
-BCH_Data = yf.Ticker(Bitcoin_Cash)
+BCH_Data = yf.Ticker(BitcoinCash)
 
 
-# Lets fetch the Price History from Yahoo Finance. We use Max Period to get all the History
+#Fetch history data from Yahoo Finance
 BTCHis = BTC_Data.history(period="max")
 ETHHis = ETH_Data.history(period="max")
 XRPHis = XRP_Data.history(period="max")
 BCHHis = BCH_Data.history(period="max")
 
-st.title(" Cryptocurrency Daily Prices ₿ ")
-st.header("Your Dashboard ✨")
-st.subheader("You can add more crypto in the code </>")
+# Fetch crypto data for the dataframe
+BTC = yf.download(Bitcoin, start="2021-11-19", end="2021-11-19")
+ETH = yf.download(Ethereum, start="2021-11-19", end="2021-11-19")
+XRP = yf.download(Ripple, start="2021-11-19", end="2021-11-19")
+BCH = yf.download(BitcoinCash, start="2021-11-19", end="2021-11-19")
 
 #Bitcoin
-st.write(""" ## Bitcoin ($) """)
-# Adding icon for BTC
+st.write("BITCOIN ($)")
 imageBTC = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/1.png'))
+#Display image
 st.image(imageBTC)
-# Create a line chart from BTC-USD Close Price history
-st.line_chart(BTCHis.Close,  use_container_width=True)
+#Display dataframe
+st.table(BTC)
+#Display a chart
+st.bar_chart(BTCHis.Close)
 
 #Ethereum
-st.write(""" ## Ethereum ($) """)
-# Adding icon for ETH
+st.write("ETHERUM ($)")
 imageETH = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'))
-st.image(imageETH, use_column_width=False)
-# Create a line chart from ETH-USD Close Price history
-st.line_chart(ETHHis.Close,  use_container_width=True)
+#Display image
+st.image(imageETH)
+#Display dataframe
+st.table(ETH)
+#Display a chart
+st.bar_chart(ETHHis.Close)
 
 #Ripple
-st.write(""" ## Ripple ($) """)
-# Adding icon for XRP
+st.write("RIPPLE ($)")
 imageXRP = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/52.png'))
-st.image(imageXRP, use_column_width=False)
-# Create a line chart from XRP-USD Close Price history
-st.line_chart(XRPHis.Close,  use_container_width=True)
+#Display image
+st.image(imageXRP)
+#Display dataframe
+st.table(XRP)
+#Display a chart
+st.bar_chart(XRPHis.Close)
 
 #Bitcoin Cash
-st.write(""" ## Bitcoin-Cash ($USD) """)
-# Adding icon for BCH
+st.write("BITCOIN CASH ($)")
 imageBCH = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/64x64/1831.png'))
-st.image(imageBCH, use_column_width=False)
-# Create a line chart from BCH-USD Close Price history
-st.line_chart(BCHHis.Close,  use_container_width=True)
+#Display image
+st.image(imageBCH)
+#Display dataframe
+st.table(BCH)
+#Display a chart
+st.bar_chart(BCHHis.Close)
